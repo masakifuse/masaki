@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   end
   private#privateを書くことによってuserscontrollerの中でしか呼び出せなく、セキュリティーに強くなる。
   def user_params#定番の記述
-    params.require(:user).permit(:username, :email, :profile_image)
+    params.require(:user).permit(:username, :email, :profile, :profile_image)
   end
 end
 
