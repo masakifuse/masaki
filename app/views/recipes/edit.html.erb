@@ -1,0 +1,38 @@
+<section class="hero is-success">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+      面接者編集
+      </h1>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+    <div class="column is-6">
+      <%= form_for @recipe do |f| %>
+
+      <div class="field">
+       <%= f.label :title, "評価", class: "label" %> <!-最初にタイトルを編集したいのでtitle->
+       <%= f.text_field :title, class: "input" %><!-string型なのでtext_field :カラム名->
+      </div>
+
+      <div class="field">
+        <%= f.label :body, "評価コメント", class: "label" %>
+        <%= f.text_area :body, class: "textarea" %><!- bodyはテキスト型なのでtext_area->
+      </div>
+
+      <div class="field">
+        <%= f.label :image, "写真", class: "label" %>
+        <%= f.attachment_field :image, class: "input" %>
+      </div>  
+
+      <%= f.submit '更新', class: "button is-success" %> <!-最後にボタンを忘れずに->
+
+      <% end %>
+    </div>
+    </div>
+  </div>
+</section>    

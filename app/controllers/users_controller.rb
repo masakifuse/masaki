@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     @user.update(user_params)#@userを更新する
     redirect_to user_path(@user)#ユーザーの詳細画面に戻る
   end
+  
   private#privateを書くことによってuserscontrollerの中でしか呼び出せなく、セキュリティーに強くなる。
   def user_params#定番の記述
     params.require(:user).permit(:username, :email, :profile, :profile_image)
